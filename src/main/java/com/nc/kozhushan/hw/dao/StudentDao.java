@@ -22,7 +22,7 @@ public class StudentDao {
     }
 
     public int update(Student s) {
-        String sql = "update Students set name='" + s.getName() + "', age=" + s.getAge() + ", email='" + s.getEmail() + "' where id=" + s.getId() + "";
+        String sql = "update Students set name='" + s.getName() + "', age=" + s.getAge() + ", email='" + s.getEmail() + "' where id=" + s.getId();
         return template.update(sql);
     }
 
