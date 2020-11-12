@@ -10,25 +10,13 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <context:component-scan base-package="com.nc.kozhushan.hw.controllers"></context:component-scan>
+    <context:component-scan base-package="com.nc.kozhushan.hw.controllers"/>
+
+    <import resource="persistence-config.xml"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/"></property>
-        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
-        <property name="username" value="kozhushan"></property>
-        <property name="password" value="masha"></property>
-    </bean>
-
-    <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="ds"></property>
-    </bean>
-
-    <bean id="dao" class="com.nc.kozhushan.hw.dao.StudentDao">
-        <property name="template" ref="jt"></property>
-    </bean>
 </beans>
